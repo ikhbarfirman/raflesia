@@ -1,0 +1,11 @@
+tanggal,keterangan,debet,kredit,saldo,image_url
+2024-10-01,Pembelian barang,500000.0,0.0,500000.0,
+2024-10-02,Penjualan barang,0.0,300000.0,800000.0,
+2024-10-03,Pembayaran hutang,200000.0,0.0,600000.0,
+2024-10-04,Gaji karyawan,0.0,500000.0,100000.0,
+2024-10-05,Penjualan barang,0.0,400000.0,500000.0,
+2024-10-07,gambar pisang,5000.0,0.0,505000.0,https://drive.google.com/file/d/1ShwPtkFuQPOasa7oZIsulx92e70Nwu93/view?usp=drivesdk
+2024-10-07,gambar pisang,5000.0,0.0,510000.0,https://drive.google.com/file/d/1_65SLuOLVjGUbraBY2gDLIarZVsD4ugt/view?usp=drivesdk
+2024-10-07,coba aja,50000.0,0.0,560000.0,https://drive.google.com/file/d/1FplgsWVkBud6OCP2gUtzoXSSn4KX39IC/view?usp=drivesdk
+2024-10-07,beli kucing,1234.0,0.0,561234.0,https://drive.google.com/file/d/1J9BlstIw_9MK_c5wpXuZmWSkfhv_0twY/view?usp=drivesdk
+2024-10-08,Beli makan siang,0.0,20000.0,541234.0,https://drive.google.com/file/d/1YFxyhgc2xjGqwVE3em0oZcgYb338xt1k/view?usp=drivesdk
