@@ -1,0 +1,120 @@
+# Table: Department
+- dept_Id (INT): Unique identifier for the department.
+- dept_Name (VARCHAR): Name of the department (Hematology, Cardiology, ENT,Homeopathy, General Medicine, Anesthesiology, Pediatrics, Dentistry, Dermatology, Surgery, Endocrinology, Critical Care, Audiology & Speech, Oncology, Emergency Medicine, Sexology, Orthopedics, Nutrition & Dietetics, Immunology, Gastroenterology, Gynecology, Geriatrics, Urology, Psychiatry, Radiology, Rehabilitation, Pulmonology, Neurology, Psychology, Nephrology, Family Medicine).
+
+# Table: Room
+- room_No (INT): Unique identifier for each room.
+- dept_Id (INT): Department to which this room belongs.
+- room_Type (VARCHAR): Type of room (Consultation Room, Operation Theatre, Standard Room, Super Deluxe Room, Deluxe Room, Emergency Room).
+
+# Table: Doctor
+- doct_Id (INT): Unique identifier for the doctor.
+- dept_Id (INT): Department the doctor is affiliated with.
+- FName (VARCHAR): Doctor’s first name.
+- LName (VARCHAR): Doctor’s last name.
+- Gender (CHAR): Doctor’s gender. (M, F)
+- contact_No (VARCHAR): Contact phone number.
+- surgeon_Type (VARCHAR): Type of surgeon or medical specialty.
+- office_No (INT): Office room number assigned to the doctor.
+
+# Table: Nurse
+- nurse_Id (INT): Unique identifier for the nurse.
+- dept_Id (INT): Department the nurse is assigned to.
+- FName (VARCHAR): Nurse’s first name.
+- LName (VARCHAR): Nurse’s last name.
+- Gender (CHAR): Nurse’s gender.
+- contact_No (VARCHAR): Contact phone number.
+
+# Table: Helpers
+- helper_Id (INT): Unique identifier for the helper staff.
+- dept_Id (INT): Department the helper works in.
+- FName (VARCHAR): Helper’s first name.
+- LName (VARCHAR): Helper’s last name.
+- Gender (CHAR): Helper’s gender.
+- contact_No (VARCHAR): Contact phone number.
+
+# Table: Ward
+- ward_No (INT): Unique identifier for the ward.
+- ward_Name (VARCHAR): Name of the ward (e.g., Pediatrics Ward).
+- dept_Id (INT): Department to which the ward belongs.
+
+# Table: Bed
+- bed_No (INT): Unique identifier for a bed.
+- ward_No (INT): Ward where this bed is located.
+
+# Table: Patients
+- patient_Id (INT): Unique identifier for the patient.
+- FName (VARCHAR): Patient’s first name.
+- LName (VARCHAR): Patient’s last name.
+- Gender (CHAR): Patient’s gender.
+- Date_Of_Birth (DATE): Birth date of the patient.
+- contact_No (VARCHAR): Contact number of the patient.
+- pt_Address (VARCHAR): Address of the patient.
+
+# Table: BedRecords
+- admission_Id (INT): Unique ID for a patient’s bed admission.
+- bed_No (INT): Bed assigned to the patient.
+- patient_Id (INT): ID of the admitted patient.
+- nurse_Id (INT): Nurse responsible for the patient.
+- helper_Id (INT): Helper assisting the patient.
+- admission_Date (DATE): Date of admission.
+- discharge_Date (DATE): Date of discharge.
+- amount (INT): Total charges for the stay.
+- mode_of_payment (VARCHAR): Payment method (e.g., Cash, Insurance).
+
+# Table: RoomRecords
+- admission_ID (INT): Unique ID for room admission.
+- room_No (INT): Room assigned to the patient.
+- patient_Id (INT): ID of the admitted patient.
+- nurse_Id (INT): Nurse assigned.
+- helper_Id (INT): Helper assigned.
+- admission_Date (DATE): Date of admission.
+- discharge_Date (DATE): Date of discharge.
+- amount (INT): Room charges.
+- mode_of_payment (VARCHAR): Payment method.
+
+# Table: Appointment
+- appointment_Id (INT): Unique appointment ID.
+- patient_Id (INT): Patient making the appointment.
+- doct_Id (INT): Doctor being consulted.
+- reason (VARCHAR): Reason for appointment (e.g., headache).
+- appointment_Date (DATE): Date of appointment.
+- payment_amount (INT): Consultation fee.
+- mode_of_payment (VARCHAR): Payment method.
+- mode_of_appointment (VARCHAR): Type of appointment (e.g., Online, In-person).
+- appointment_status (VARCHAR): Status (e.g., Scheduled, Completed, Cancelled).
+
+# Table: MedicalRecord
+- record_Id (INT): Unique ID for the medical record.
+- doct_Id (INT): Doctor who created the record.
+- patient_Id (INT): Patient the record belongs to.
+- visit_Date (DATE): Date of consultation.
+- curr_Weight (DECIMAL): Patient's weight during visit.
+- curr_Height (DECIMAL): Patient's height during visit.
+- curr_Blood_Pressure (VARCHAR): Blood pressure reading.
+- curr_Temp_F (DECIMAL): Body temperature in Fahrenheit.
+- diagnosis (VARCHAR): Diagnosis notes.
+- treatment (VARCHAR): Prescribed treatment or medication.
+- next_Visit (DATE): Scheduled next visit.
+
+# Table: StaffShift
+- shift_Id (INT): Unique identifier for a shift.
+- doct_Id (INT): Doctor on shift.
+- nurse_Id (INT): Nurse on shift.
+- helper_Id (INT): Helper on shift.
+- shift_Date (DATE): Date of the shift.
+- shift_Start (TIME): Start time.
+- shift_End (TIME): End time.
+
+# Table: SurgeryRecord
+- surgery_Id (INT): Unique ID for the surgery.
+- patient_Id (INT): Patient who underwent surgery.
+- surgeon_Id (INT): Doctor who performed the surgery.
+- surgery_Type (VARCHAR): Type of surgery (e.g., Appendectomy).
+- surgery_Date (DATE): Date of surgery.
+- start_Time (TIME): Start time of surgery.
+- end_Time (TIME): End time of surgery.
+- room_No (INT): Room used for surgery.
+- notes (VARCHAR): Additional notes and remarks.
+- nurse_Id (INT): Assisting nurse.
+- helper_Id (INT): Assisting helper.
