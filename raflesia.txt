@@ -1,0 +1,22 @@
+🗂️ Table Name: keuangan_warga
+📄 Table Description:
+Tabel keuangan_warga menyimpan catatan transaksi keuangan warga di Gang Raflesia, yang berlokasi di Jalan Flamboyan 23, Blok F41 dan Blok F42, Kabupaten Bekasi, Jawa Barat 16660. Setiap transaksi yang menggunakan uang kas Gang Raflesia didokumentasikan dalam tabel ini.
+
+Tabel ini berfungsi sebagai buku kas digital warga, mencatat seluruh pemasukan (seperti iuran bulanan dan jimpitan) maupun pengeluaran (seperti belanja operasional), serta menjaga saldo akhir setelah setiap transaksi. Setiap baris mewakili satu transaksi dengan informasi tanggal, deskripsi, nilai debit/kredit, saldo terkini, dan tautan gambar bukti transaksi.
+
+📌 Column Descriptions:
+Kolom	Tipe Data	Penjelasan
+no	int4	Nomor urut atau indeks dari transaksi. Menunjukkan urutan kronologis transaksi; semakin kecil angkanya, semakin lama transaksinya.
+tanggal	date	Tanggal terjadinya transaksi. Digunakan untuk filter waktu atau laporan berkala.
+keterangan	varchar(128)	Deskripsi atau narasi transaksi. Dapat berisi frasa seperti "iuran bulanan", "uang jimpitan", atau jenis belanja tertentu. Juga bisa mengandung nama warga atau blok yang terlibat.
+debet	float4	Nilai pemasukan ke kas warga. Jika bernilai lebih dari 0, berarti uang masuk (contoh: iuran, donasi, jimpitan).
+kredit	float4	Nilai pengeluaran dari kas. Jika bernilai lebih dari 0, berarti terjadi pengeluaran (contoh: pembelian barang, biaya operasional).
+saldo	float4	Saldo akhir kas setelah transaksi dilakukan. Dihitung secara kumulatif dari transaksi sebelumnya.
+image_url	varchar(128)	URL menuju gambar bukti transaksi, biasanya berupa link Google Drive. Berfungsi untuk dokumentasi dan verifikasi visual.
+
+💡 Catatan untuk LLM atau Sistem AI yang Membaca Tabel Ini:
+Transaksi pemasukan dapat dikenali dari nilai debet > 0, sedangkan pengeluaran dari kredit > 0.
+
+Frasa dalam kolom keterangan bisa membantu mengidentifikasi jenis transaksi: misalnya, frasa “iuran bulanan” biasanya merujuk pada pemasukan rutin dari warga.
+
+saldo menunjukkan kondisi akhir kas setelah setiap transaksi, berguna untuk melacak arus kas secara longitudinal.
